@@ -21,6 +21,7 @@ public class MoveByTouch : MonoBehaviour
         if (highScore <= currentScore)
             highScore = currentScore;
         SaveSystem.SavePlayer(this);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     public void LoadPlayer()
@@ -72,14 +73,6 @@ public class MoveByTouch : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        // not needed I guess..Destroy(gameObject);
-        //
-        
-
-        
-
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         SavePlayer();
     }
 }

@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRate: 0.8
-  hexagonPrefab: {fileID: 5408253170331927447, guid: b09e9ccb0ec5f38438bebebc084e30b6,
+  hexagonPrefab: {fileID: 5408253170331927450, guid: b09e9ccb0ec5f38438bebebc084e30b6,
     type: 3}
   moveByTouch: {fileID: 2127559117}
 --- !u!4 &417606063
@@ -509,8 +509,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1632648769}
-        m_MethodName: ToMenu
+      - m_Target: {fileID: 2127559117}
+        m_MethodName: SavePlayer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
