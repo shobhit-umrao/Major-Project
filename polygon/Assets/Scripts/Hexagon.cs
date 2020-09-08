@@ -5,7 +5,7 @@ public class Hexagon : MonoBehaviour
     public Rigidbody2D rb;
     public float shrinkSpeed = 2f;
 
-
+    public MoveByTouch moveByTouch;
     
     // Start is called before the first frame update
 
@@ -38,7 +38,7 @@ public class Hexagon : MonoBehaviour
             //GameObject.Destroy(gameObject);
             //Debug.Log("After gameObject.Destroy");
 
-
+            moveByTouch.currentScore += 10;
             //Debug.Log("Shrink Speed: " + shrinkSpeed);
 
         }

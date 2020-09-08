@@ -223,3 +223,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 5408253170331927451}
   shrinkSpeed: 4
+  moveByTouch: {fileID: 0}

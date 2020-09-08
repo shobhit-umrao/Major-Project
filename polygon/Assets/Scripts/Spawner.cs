@@ -4,7 +4,7 @@ public class Spawner : MonoBehaviour
 {
     public float spawnRate = 1f;
 
-    public GameObject hexagonPrefab;
+    public Hexagon hexagonPrefab;
 
     private float nextTimeToSpawn = 0f;
 
@@ -16,10 +16,10 @@ public class Spawner : MonoBehaviour
     {
         if (Time.time >= nextTimeToSpawn)
         {
-            moveByTouch.currentScore += 10;
             //Debug.Log("Spawnrate: " + spawnRate);
             //Debug.Log("next Time to spawn: " + nextTimeToSpawn);
-            Instantiate(hexagonPrefab, Vector3.zero, Quaternion.identity);
+            Hexagon clone = Instantiate(hexagonPrefab, Vector3.zero, Quaternion.identity);
+            clone.moveByTouch = moveByTouch;
             nextTimeToSpawn = Time.time + 1f / spawnRate;
         }
     }
