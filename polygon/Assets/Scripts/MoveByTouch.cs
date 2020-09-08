@@ -11,31 +11,16 @@ public class MoveByTouch : MonoBehaviour
     public int highScore;
     
 
-    
+    void Start()
+    {
+        this.LoadPlayer();
+    }
 
     public void SavePlayer()
     {
-        //highScore = currentScore;
-        //SaveSystem.SavePlayer(this);
-        PlayerData data = SaveSystem.LoadPLayer();
-        if ((data != null) && data.highScore <= currentScore)
-        {
+        if (highScore <= currentScore)
             highScore = currentScore;
-            SaveSystem.SavePlayer(this);
-        }
-        else
-        {
-            if(highScore <= currentScore)
-            {
-                highScore = currentScore;
-                SaveSystem.SavePlayer(this);
-            }
-
-            SaveSystem.SavePlayer(this);
-
-            //Debug.Log("HighScore is greater Bruh!");
-        }
-
+        SaveSystem.SavePlayer(this);
     }
 
     public void LoadPlayer()
