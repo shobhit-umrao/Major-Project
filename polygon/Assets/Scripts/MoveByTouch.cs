@@ -1,21 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class MoveByTouch : MonoBehaviour
 {
     public float moveSpeedTouch = 600f;
-
     float movementTouch = 0f;
-
     public int currentScore=0;
     public int highScore;
-    
-
     void Start()
     {
         this.LoadPlayer();
     }
-
     public void SavePlayer()
     {
         if (highScore <= currentScore)
@@ -23,22 +17,17 @@ public class MoveByTouch : MonoBehaviour
         SaveSystem.SavePlayer(this);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
-
     public void LoadPlayer()
     {
         PlayerData data = SaveSystem.LoadPLayer();
-
         highScore = data.highScore;
     }
-
     // Update is called once per frame
     void Update()
     {
-
         movementTouch = Input.GetAxisRaw("Horizontal");
         if (Input.touchCount > 0)
-        {
-           
+        {      
             for (int i = 0; i < Input.touchCount ; i++)
             {
                 Touch touch = Input.GetTouch(i);
@@ -65,12 +54,10 @@ public class MoveByTouch : MonoBehaviour
             }
         }
     }
-
     private void FixedUpdate()
     {
         transform.RotateAround(Vector3.zero, Vector3.forward, movementTouch * Time.fixedDeltaTime * -moveSpeedTouch);
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         SavePlayer();
